@@ -51,6 +51,21 @@ export default {
             {
                 user.isActive = "Actif";
             }
+        },
+        addUser()
+        {
+            let firstname = document.getElementById("firstname").value;
+            let lastname = document.getElementById("lastname").value;
+            let email = document.getElementById("email").value;
+            let id = this.users.length + 1;
+            
+            let newUser = {id : id,
+                           firstname : firstname,
+                           lastname : lastname,
+                           email : email,
+                           isActive : "Actif"};
+            this.users.push(newUser);
+            console.log(this.users);
         }
     }  
 }

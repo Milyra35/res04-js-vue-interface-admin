@@ -24,9 +24,24 @@
                 </ul>
             </nav>
         </header>
-        <main class="container py-5">
+        <main id="table" class="container py-5">
             <h1 class="mb-5">Utilisateurs</h1>
-            <table id="table" class="table table-striped">
+            <form @submit.prevent="addUser">
+                <fieldset>
+                    <label for="firstname">Prénom</label>
+                    <input type="text" name="firstname" id="firstname" required>
+                </fieldset>
+                <fieldset>
+                    <label for="lastname">Nom</label>
+                    <input type="text" name="lastname" id="lastname" required>
+                </fieldset>
+                <fieldset>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Ajouter utilisateur</button>
+            </form>
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>
