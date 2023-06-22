@@ -66,6 +66,18 @@ export default {
                            isActive : "Actif"};
             this.users.push(newUser);
             console.log(this.users);
+        },
+        changeUser(user)
+        {
+            let td = document.querySelector("tbody tr td:last-of-type");
+            // let form = document.createElement("form");
+            let input = document.createElement("input");
+            input.setAttribute("type", "text");
+
+            // form.appendChild(input);
+            td.appendChild(input);
+            input.value = user.firstname;
+            // user.firstname = input.value;
         }
     }  
 }

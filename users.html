@@ -75,6 +75,9 @@
                             <button v-if="user.isActive === 'Actif'" @click="userStatus(user)" class="btn btn-secondary">Désactiver</button>
                             <button v-else-if="user.isActive === 'Inactif'" @click="userStatus(user)" class="btn btn-primary">Activer</button>
                         </td>
+                        <td>
+                            <button @click="changeUser(user)" class="btn btn-success">Modifier</button>
+                        </td>
                     </tr>
                     <!-- <tr>
                         <td>2</td>
