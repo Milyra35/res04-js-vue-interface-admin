@@ -7,35 +7,40 @@ export default {
                     firstname : "Jean",
                     lastname : "Neymar",
                     email : "jean.neymar@rlb.fr",
-                    isActive : "Actif"
+                    isActive : "Actif",
+                    edit : false
                 },
                 {
                     id : 2,
                     firstname : "Samuel",
                     lastname : "Ropierd",
                     email : "samro@hotmail.fr",
-                    isActive : "Inactif"
+                    isActive : "Inactif",
+                    edit : false
                 },
                 {
                     id : 3,
                     firstname : "Julie",
                     lastname : "Monnade",
                     email : "ju.limo@hotmail.fr",
-                    isActive : "Inactif"
+                    isActive : "Inactif",
+                    edit : false
                 },
                 {
                     id : 4,
                     firstname : "Céline",
                     lastname : "Didion",
                     email : "almost-diva@musical.io",
-                    isActive : "Actif"
+                    isActive : "Actif",
+                    edit : false
                 },
                 {
                     id : 5,
                     firstname : "Loic",
                     lastname : "Grenac'h",
                     email : "logr@proton.bzh",
-                    isActive : "Actif"
+                    isActive : "Actif",
+                    edit : false
                 }
             ]
         }  
@@ -67,17 +72,15 @@ export default {
             this.users.push(newUser);
             console.log(this.users);
         },
+        editUser(user)
+        {
+            user.edit = true;
+        },
         changeUser(user)
         {
-            let td = document.querySelector("tbody tr td:last-of-type");
-            // let form = document.createElement("form");
-            let input = document.createElement("input");
-            input.setAttribute("type", "text");
-
-            // form.appendChild(input);
-            td.appendChild(input);
-            input.value = user.firstname;
-            // user.firstname = input.value;
+            let input = document.getElementById("edit-user");
+            user.edit = false;
+            user.firstname = input.value;
         }
     }  
 }

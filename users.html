@@ -76,7 +76,11 @@
                             <button v-else-if="user.isActive === 'Inactif'" @click="userStatus(user)" class="btn btn-primary">Activer</button>
                         </td>
                         <td>
-                            <button @click="changeUser(user)" class="btn btn-success">Modifier</button>
+                            <button @click="editUser(user)" class="btn btn-success">Modifier</button>
+                            <form v-if="user.edit" @submit.prevent="changeUser(user)">
+                                <input type="text" v-model="user.firstname" id="edit-user">
+                                <button type="submit" class="btn btn-secondary">Enregistrer</button>
+                            </form>
                         </td>
                     </tr>
                     <!-- <tr>
