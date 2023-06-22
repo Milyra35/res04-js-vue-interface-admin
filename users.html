@@ -56,8 +56,10 @@
                         <td>{{ user.lastname }}</td>
                         <td>{{ user.email }}</td>
                         <td>{{ user.isActive }}</td>
-                        <td v-if="user.isActive === 'Actif'"><button @click="userStatus" class="btn btn-secondary">Désactiver</button></td>
-                        <td v-else-if="user.isActive === 'Inactif'"><button @click="userStatus" class="btn btn-primary">Activer</button></td>
+                        <td>
+                            <button v-if="user.isActive === 'Actif'" @click="userStatus(user)" class="btn btn-secondary">Désactiver</button>
+                            <button v-else-if="user.isActive === 'Inactif'" @click="userStatus(user)" class="btn btn-primary">Activer</button>
+                        </td>
                     </tr>
                     <!-- <tr>
                         <td>2</td>

@@ -41,18 +41,15 @@ export default {
         }  
     }, 
     methods : {  
-        userStatus(event)
+        userStatus(user)
         {
-            for (let user of this.users)
+            if (user.isActive === "Actif")
             {
-                if (event.target.isActive === "Actif")
-                {
-                    user.isActive = "Inactif";
-                }
-                else if (event.target.isActive === "Inactif")
-                {
-                    user.isActive = "Actif";
-                }
+                user.isActive = "Inactif";
+            }
+            else if (user.isActive === "Inactif")
+            {
+                user.isActive = "Actif";
             }
         }
     }  
