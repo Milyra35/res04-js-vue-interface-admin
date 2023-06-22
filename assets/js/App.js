@@ -1,16 +1,17 @@
 export default {  
     data() {  
-        return {  
-            
-        }  
+        // return {  
+        //     path : window.location.pathname
+        // }  
+    },
+    setup () {
+        let path = window.location.pathname;
+
+        return {
+            path
+        }
     },  
     methods : {  
-         putActiveCLass() 
-         {
-            if (window.location.pathname === "./index.html")
-            {
-                
-            }
-         }
+        
     }  
 }
