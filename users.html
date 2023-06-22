@@ -78,7 +78,9 @@
                         <td>
                             <button @click="editUser(user)" class="btn btn-success">Modifier</button>
                             <form v-if="user.edit" @submit.prevent="changeUser(user)">
-                                <input type="text" v-model="user.firstname" id="edit-user">
+                                <input type="text" v-model="user.firstname" id="edit-firstname">
+                                <input type="text" v-model="user.lastname" id="edit-lastname">
+                                <input type="text" v-model="user.email" id="edit-email">
                                 <button type="submit" class="btn btn-secondary">Enregistrer</button>
                             </form>
                         </td>

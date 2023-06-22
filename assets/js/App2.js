@@ -68,7 +68,8 @@ export default {
                            firstname : firstname,
                            lastname : lastname,
                            email : email,
-                           isActive : "Actif"};
+                           isActive : "Actif",
+                           edit : false};
             this.users.push(newUser);
             console.log(this.users);
         },
@@ -78,9 +79,14 @@ export default {
         },
         changeUser(user)
         {
-            let input = document.getElementById("edit-user");
+            let inputFirstname = document.getElementById("edit-firstname");
+            let inputLastname = document.getElementById("edit-lastname");
+            let inputEmail = document.getElementById("edit-email");
+
             user.edit = false;
-            user.firstname = input.value;
+            user.firstname = inputFirstname.value;
+            user.lastname = inputLastname.value;
+            user.email = inputEmail.value;
         }
     }  
 }
